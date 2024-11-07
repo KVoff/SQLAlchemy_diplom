@@ -15,7 +15,7 @@ file_handler.setFormatter(logging.Formatter('%(asctime)s - %(message)s'))
 logger.addHandler(file_handler)
 
 # Создание движка и сессии для тестов
-DATABASE_URL = "sqlite:///test_time_sqlite.db"
+DATABASE_URL = "sqlite:///test/test_time_sqlite.db"
 engine = create_engine(DATABASE_URL, echo=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
