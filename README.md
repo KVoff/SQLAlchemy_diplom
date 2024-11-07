@@ -47,13 +47,13 @@
    alembic revision --autogenerate -m "описание изменений"
    alembic upgrade head
 
-6. **Запустите сервер разработки:**
+6. **Запустите сервер разработки из корневой директории:**
     ```bash
-   uvicorn main:app --reload
+   uvicorn app.main:app --reload
    
 Сервер будет доступен по адресу: http://127.0.0.1:8000/
 
-7. **Запуск тестов:**
+7. **Запуск тестов из корневой директории:**
     ```bash
    PYTHONPATH=$(pwd) pytest test/
    
