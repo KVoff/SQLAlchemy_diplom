@@ -44,7 +44,7 @@ def test_create_buyers(session):
     ]
     session.add_all(buyers)
     session.commit()
-    logger.info(f"Create 100 buyers: {time.time() - start_time} seconds")
+    logger.info(f"Create {len(buyers)} buyers: {time.time() - start_time} seconds")
 
 def test_read_buyers(session):
     start_time = time.time()
@@ -64,6 +64,18 @@ def test_delete_buyers(session):
     session.query(Buyer).delete()
     session.commit()
     logger.info(f"Delete all buyers: {time.time() - start_time} seconds")
+
+
+
+# def test_delete_buyers_by_one(session):
+#     start_time = time.time()
+#     # Получаем все записи в таблице Buyer
+#     buyers = session.query(Buyer).all()
+#     # Удаляем каждый объект по одному
+#     for buyer in buyers:
+#         session.delete(buyer)
+#     session.commit()
+#     logger.info(f"Delete all buyers: {time.time() - start_time} seconds")
 
 
 

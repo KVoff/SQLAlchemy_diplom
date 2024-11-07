@@ -8,6 +8,8 @@ from app.database import Base, str_uniq, int_pk, str_null_true
 
 if TYPE_CHECKING:
     from app.models.profile import Profile
+    from app.models.orders import Order
+
 
 # Определяем промежуточную модель для связи "многие ко многим"
 # между покупателями и адресами
@@ -39,7 +41,7 @@ class Buyer(Base):
     )
     # Связь "один ко многим" с Orders
     orders: Mapped[List["Order"]] = relationship(
-        "Order", back_populates="buyer"
+        "Order", back_populates="buyer", cascade="all, delete"
     )
     # Связь "один к одному" с Profile
     profile: Mapped["Profile"] = relationship(
