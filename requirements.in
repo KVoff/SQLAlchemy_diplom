@@ -1,0 +1,7 @@
+sqlalchemy
+alembic
+pytest
+pytest-html
+uvicorn
+fastapi
+pydantic[email]
